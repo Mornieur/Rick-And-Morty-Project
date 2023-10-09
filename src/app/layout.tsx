@@ -2,11 +2,10 @@
 
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-// import { GlobalStyles } from '../styles/index';
+import { GlobalStyles } from '../styles/index';
 import Providers from '@/utils/provider';
 import StyledComponentsRegistry from '../../lib/registry';
 import { ApolloWrapper } from '../../lib/apolloProvider';
-import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        {/* <GlobalStyles /> */}
         <ApolloWrapper>
           <Providers>
-            <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+            <StyledComponentsRegistry>
+              <GlobalStyles />
+              {children}
+            </StyledComponentsRegistry>
           </Providers>
         </ApolloWrapper>
       </body>
