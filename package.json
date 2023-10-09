@@ -6,17 +6,49 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@apollo/client": "^3.8.0-rc.2",
+    "@apollo/experimental-nextjs-app-support": "^0.4.2",
+    "@tanstack/react-query": "^4.33.0",
+    "@tanstack/react-query-devtools": "^4.33.0",
+    "@tanstack/react-query-next-experimental": "^5.0.0-alpha.80",
+    "@testing-library/react": "^14.0.0",
     "@types/node": "20.5.4",
     "@types/react": "18.2.21",
     "@types/react-dom": "18.2.7",
+    "@types/react-icons": "^3.0.0",
+    "apollo-client": "^2.6.10",
     "eslint": "8.47.0",
     "eslint-config-next": "13.4.19",
+    "framer-motion": "^10.16.1",
+    "graphql": "16.8.0",
+    "graphql-request": "6.1.0",
+    "graphql-tag": "^2.12.6",
     "next": "13.4.19",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "typescript": "5.1.6"
+    "react-icons": "^4.10.1",
+    "sharp": "^0.32.5",
+    "styled-components": "^6.0.7",
+    "three": "^0.155.0",
+    "typescript": "5.1.6",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "7.4.6",
+    "@storybook/addon-interactions": "7.4.6",
+    "@storybook/addon-links": "7.4.6",
+    "@storybook/blocks": "7.4.6",
+    "@storybook/nextjs": "7.4.6",
+    "@storybook/react": "7.4.6",
+    "@storybook/testing-library": "0.0.14-next.2",
+    "@types/styled-components": "^5.1.26",
+    "@types/three": "^0.155.1",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "7.4.6"
   }
 }
