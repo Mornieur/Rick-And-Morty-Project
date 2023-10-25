@@ -12,7 +12,6 @@ const SLIDE_SCROLL = 184;
 
 export const Carousel: React.FC<CarouselProps> = ({
   children,
-  isInteractive,
   hideButtonsWhenSingleSlide,
 }) => {
   const childrenArray = Children.toArray(children);

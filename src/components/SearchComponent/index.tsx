@@ -7,13 +7,15 @@ interface SearchProps {
   value: string;
 }
 
-export const Search: FC<SearchProps> = ({ onChange }) => {
+export const Search: FC<SearchProps> = ({ onChange, value = '' }) => {
   return (
     <S.Container>
       <S.SearchInput
         data-testid="search-input"
         placeholder="Search for a character..."
         onChange={(e) => onChange(e.target.value)}
+        value={value}
+        type="search"
       />
       <TfiSearch />
     </S.Container>

@@ -7,7 +7,7 @@ import { useSearchParams } from 'next/navigation';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { useState } from 'react';
 import { ModalInformation } from '@/components/ModalInformation';
-import { CharacterTypes, Episode } from '@/services/GET/types';
+import { Episode } from '@/services/GET/types';
 import { Loading } from '@/global/components/Loading';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
 import { Skeleton } from '@/global/components/Skeleton';
@@ -19,16 +19,18 @@ const Consult: React.FC = () => {
   const { data: character, isLoading, isError } = useProfileQuery(id || '');
 
   const [selectedData, setSelectedData] = useState<Episode | null>(null);
-  const [selectedLocationData, setSelectedLocationData] =
-    useState<CharacterTypes | null>(null);
+  const [selectedOriginData, setSelectedOriginData] = useState<string | null>(
+    null
+  );
 
   const handleDataClick = (episode: Episode) => {
     setSelectedData(episode);
   };
 
-  const handleLocationClick = (loc: any | null) => {
-    setSelectedLocationData(loc);
+  const handleOriginClick = (loc: string) => {
+    setSelectedOriginData(loc);
   };
+
   return (
     <S.Container>
       <S.BackButton onClick={() => window.history.back()}>
@@ -59,12 +61,12 @@ const Consult: React.FC = () => {
               ))}
             </ModalInformation>
           )}
-          {selectedLocationData && (
+          {selectedOriginData && (
             <ModalInformation
-              onCloseModal={() => setSelectedLocationData(null)}
-              isModalOpen={!!selectedLocationData}
+              onCloseModal={() => setSelectedOriginData(null)}
+              isModalOpen={!!selectedOriginData}
               info="LOCALIZATION"
-              nameBox={selectedLocationData?.name}
+              nameBox={selectedOriginData}
             >
               {selectedData?.characters?.map((char) =>
                 !isLoading ? (
@@ -106,7 +108,7 @@ const Consult: React.FC = () => {
               </S.Description>
               <S.Title>Origin:</S.Title>
               <S.Description
-                onClick={() => handleLocationClick(character.origin)}
+                onClick={() => handleOriginClick(character.origin.name)}
               >
                 {character.origin.name === '' ? (
                   <p>-</p>
