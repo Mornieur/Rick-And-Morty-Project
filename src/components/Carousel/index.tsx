@@ -4,11 +4,17 @@ import { IoIosArrowBack, IoIosArrowForward } from 'react-icons/io';
 
 interface CarouselProps {
   children: ReactNode;
+  isInteractive?: boolean;
+  hideButtonsWhenSingleSlide?: boolean;
 }
 
 const SLIDE_SCROLL = 184;
 
-export const Carousel: React.FC<CarouselProps> = ({ children }) => {
+export const Carousel: React.FC<CarouselProps> = ({
+  children,
+  isInteractive,
+  hideButtonsWhenSingleSlide,
+}) => {
   const childrenArray = Children.toArray(children);
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -26,9 +32,11 @@ export const Carousel: React.FC<CarouselProps> = ({ children }) => {
 
   return (
     <S.Container>
-      <S.Button onClick={prevSlide}>
-        <IoIosArrowBack size={40} />
-      </S.Button>
+      {hideButtonsWhenSingleSlide ? null : (
+        <S.Button aria-label="back" onClick={prevSlide}>
+          <IoIosArrowBack size={40} />
+        </S.Button>
+      )}
 
       <S.Content>
         <S.DataItems ref={scrollRef}>
@@ -38,9 +46,11 @@ export const Carousel: React.FC<CarouselProps> = ({ children }) => {
         </S.DataItems>
       </S.Content>
 
-      <S.Button onClick={nextSlide}>
-        <IoIosArrowForward size={40} />
-      </S.Button>
+      {hideButtonsWhenSingleSlide ? null : (
+        <S.Button aria-label="forward" onClick={nextSlide}>
+          <IoIosArrowForward size={40} />
+        </S.Button>
+      )}
     </S.Container>
   );
 };
