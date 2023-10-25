@@ -1,6 +1,6 @@
 'use client';
 
-import { Modal } from '@/components/Modal';
+import { Modal } from '@/global/components/Modal';
 import * as S from './styles';
 import useProfileQuery from '@/services/GET/useProfileQuery';
 import { useSearchParams } from 'next/navigation';
