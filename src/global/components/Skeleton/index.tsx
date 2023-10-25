@@ -27,7 +27,6 @@ export type IVariant = 'circular' | 'rectangular' | 'rounded';
 export const Skeleton: FC<ISkeleton> = ({
   variant = 'rounded',
   animation = 'pulse',
-
   ...rest
 }) => {
   return (
