@@ -24,13 +24,9 @@ export default function NotFound() {
     const camera = galaxy.camera;
     const renderer = galaxy.renderer;
 
-    // load 3d-models
-
     const starshipModel = new StarsShip(scene);
 
     starshipModel.load();
-
-    // animate framers
 
     new OrbitControls(camera, renderer.domElement);
 
@@ -38,8 +34,6 @@ export default function NotFound() {
       requestAnimationFrame(animate as any);
       renderer.render(scene, camera);
       starshipModel.starsMesh.rotation.x += 0.0005;
-
-      // moveCharacter.moveCamera()
     };
 
     animate();
@@ -56,7 +50,7 @@ export default function NotFound() {
           router.refresh();
         }}
       >
-        Home
+        Explore the Galaxy
       </S.HomeButton>
     </S.Container>
   );

@@ -22,23 +22,19 @@ export class Galaxy {
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document.body.appendChild(this.renderer.domElement);
 
-    // add light
     this.light.position.set(1, 0, 1);
     this.lightUp.position.set(0, 1, 0);
   };
 
   private build() {
-    // add mash-models
     this.scene.add(this.light);
     this.scene.add(this.lightUp);
 
-    // camera position
     this.camera.position.z = 6;
     this.camera.rotation.x = 1.4;
 
     this.create3dSpace();
 
-    // add responsivity
     addEventListener('resize', () => {
       this.camera.aspect = window.innerWidth / window.innerHeight;
       this.camera.updateProjectionMatrix();
