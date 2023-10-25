@@ -8,7 +8,7 @@ const createJestConfig = nextJest({
 const config = {
   testEnvironment: 'jest-environment-jsdom',
   transform: {
-    '^.+\\.[tj]sx?$': 'babel-jest',
+    '^.+\\.(js|jsx|ts|tsx)$': 'babel-jest',
     '^.+\\.mdx?$': '@storybook/addon-docs/jest-transform-mdx',
   },
   setupFilesAfterEnv: ['<rootDir>/src/tests/setupTests.ts'],
