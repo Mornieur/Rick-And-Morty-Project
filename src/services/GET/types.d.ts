@@ -19,12 +19,7 @@ export type CharacterTypes = {
     name: string;
     image: string;
   }[];
-  episode: {
-    id: number;
-    name: string;
-    air_date: string;
-    episode: string;
-  }[];
+  episode: Episode[];
 };
 
 export type Info = {
@@ -77,7 +72,11 @@ export type Episode = {
   name: string;
   air_date: string;
   episode: string;
-  characters: string[];
+  characters: {
+    id: number;
+    name: string;
+    image: string;
+  }[];
   url: string;
   created: Date;
 };
