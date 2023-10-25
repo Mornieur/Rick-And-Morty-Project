@@ -7,26 +7,10 @@ import { useSearchParams } from 'next/navigation';
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { useState } from 'react';
 import { ModalInformation } from '@/components/ModalInformation';
-import { CharacterTypes } from '@/services/GET/types';
+import { CharacterTypes, Episode } from '@/services/GET/types';
 import { Loading } from '@/global/components/Loading';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
-import Image from 'next/image';
 import { Skeleton } from '@/global/components/Skeleton';
-
-export interface Episode {
-  id: number;
-  name: string;
-  air_date: string;
-  episode?: string;
-}
-
-export interface Origin {
-  id: number;
-  name: string;
-  type: string;
-  dimension: string;
-  residents: string[];
-}
 
 const Consult: React.FC = () => {
   const searchParams = useSearchParams();
@@ -34,18 +18,17 @@ const Consult: React.FC = () => {
 
   const { data: character, isLoading, isError } = useProfileQuery(id || '');
 
-  const [selectedData, setSelectedData] = useState<CharacterTypes | null>(null);
+  const [selectedData, setSelectedData] = useState<Episode | null>(null);
   const [selectedLocationData, setSelectedLocationData] =
     useState<CharacterTypes | null>(null);
 
-  const handleDataClick = (episode: any | null) => {
+  const handleDataClick = (episode: Episode) => {
     setSelectedData(episode);
   };
 
   const handleLocationClick = (loc: any | null) => {
     setSelectedLocationData(loc);
   };
-
   return (
     <S.Container>
       <S.BackButton onClick={() => window.history.back()}>
