@@ -14,6 +14,10 @@ export const Container = styled.div`
     color: #fff;
     font-size: 1rem;
     font-weight: 600;
+
+    @media (max-width: 400px) {
+      font-size: 0.8rem;
+    }
   }
 
   top: 50%;
@@ -37,7 +41,11 @@ export const HomeButton = styled.button`
 `;
 
 export const ErrorImage = styled.img`
-  size: 20rem;
+  max-width: 60rem;
+  width: 100%;
   object-fit: contain;
-  /* z-index: -1; */
+
+  @media (max-width: 810px) {
+    size: 10rem;
+  }
 `;
