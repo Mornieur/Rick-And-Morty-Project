@@ -143,7 +143,7 @@ export default create({
   base: 'dark',
 
   brandTitle: 'Rick and Morty',
-  // brandUrl: 'url da aplicacao',
+  brandUrl: 'https://rick-and-morty-api-fw8m.vercel.app/',
   brandImage: rickLogo,
 
   brandTarget: '_self',
