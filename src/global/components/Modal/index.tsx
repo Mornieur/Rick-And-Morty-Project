@@ -20,7 +20,7 @@ export const Modal = ({
     <S.Container backgroundColor={backgroundColor} maxWidth={maxWidth}>
       {closeButton && (
         <S.CloseButton role="button" onClick={setCloseModal}>
-          <AiOutlineClose size={40} />
+          <AiOutlineClose size={35} />
         </S.CloseButton>
       )}
 
