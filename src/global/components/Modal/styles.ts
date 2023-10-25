@@ -27,7 +27,6 @@ export const Container = styled.div<ModalStyles>`
 
   @media (max-width: 480px) {
     max-width: 100%;
-    border-radius: 0;
   }
 `;
 
@@ -44,5 +43,9 @@ export const CloseButton = styled.button`
     right: 0.5rem;
     top: 0.5rem;
     font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    svg: 0.5rem;
   }
 `;

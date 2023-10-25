@@ -26,4 +26,5 @@ export const CardsContainer = styled.div`
 export const RickAndMortyLogo = styled.img`
   width: 100%;
   object-fit: contain;
+  padding: 0 1rem;
 `;

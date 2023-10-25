@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface IContainer {
-  background: any;
+  background: string | undefined;
 }
 
 export const MainContainer = styled.div`

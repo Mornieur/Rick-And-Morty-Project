@@ -37,6 +37,11 @@ export const NameBox = styled.p`
   max-height: 4rem;
   height: 100%;
   font-weight: 600;
+
+  @media (max-width: 480px) {
+    padding: 1rem;
+    max-width: 15rem;
+  }
 `;
 export const StatusBox = styled.p`
   display: flex;
@@ -64,6 +69,12 @@ export const HeaderInformation = styled.nav`
 export const CharacterImage = styled.img`
   border-radius: 50%;
   transform: translateY(-60px);
+
+  @media (max-width: 480px) {
+    width: 120px;
+    height: 120px;
+    transform: translateY(-50px);
+  }
 `;
 
 export const CharactersEpisode = styled.img`
@@ -106,6 +117,14 @@ export const Description = styled.p`
     position: absolute;
     right: 1rem;
     cursor: pointer;
+
+    @media (max-width: 480px) {
+      position: relative;
+    }
+  }
+
+  @media (max-width: 480px) {
+    justify-content: space-between;
   }
 `;
 
@@ -139,6 +158,10 @@ export const Characters = styled.p`
   padding: 1rem 3rem;
   border-radius: 0.5rem;
   background-color: #009f81;
+
+  @media (max-width: 480px) {
+    padding: 1rem 1rem;
+  }
 `;
 
 export const BackButton = styled.button`
