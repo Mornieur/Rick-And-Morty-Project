@@ -12,17 +12,19 @@
 
 ### 🌌 Overview
 
-    Dive deep into the captivating realms of the Rick and Morty universe with this interactive web application. Crafted meticulously with Next.js and GraphQL, users can explore detailed cards showcasing characters, captivating episodes, and mysterious planets. Tailored for everyone - whether you're a seasoned fan or just starting your interdimensional journey - our application promises a sleek, responsive, and intuitive exploration of  the series.
+    Dive deep into the captivating realms of the Rick and Morty universe with this interactive web application. Crafted meticulously with Next.js and GraphQL, users can
+    explore detailed cards showcasing characters, fascinating episodes, and mysterious planets. Tailored for everyone - whether you're a seasoned fan or just starting your
+    interdimensional journey - our application promises a sleek, responsive, and intuitive exploration of  the series.
 
 ### 💡 Features
 
-    📚 Detailed Cards: Unearth specifics about your favorite characters, recall epic episodes, or wander through alien worlds.
+    📚 Detailed Cards: Unearth specifics about your favorite characters, recall epic episodes or wander through alien worlds.
     💼 Intuitive UI: Seamlessly navigate through the multiverse with a user-friendly interface.
     🌐 Responsive Design: Explore from any device, ensuring a consistent experience whether you're on desktop, tablet, or mobile.
 
 ### 🛠 Technologies
 
-To ensure a powerful and seamless user experience, our project incorporates a stack of state-of-the-art technologies:
+To ensure a robust and seamless user experience, our project incorporates a stack of state-of-the-art technologies:
 
     - Core Development:
         - Next.js - Robust React framework.
