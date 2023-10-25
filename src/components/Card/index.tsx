@@ -6,7 +6,8 @@ import { CharacterTypes } from '@/services/GET/types';
 import { IColors } from './styles';
 import { BiPlanet } from 'react-icons/bi';
 
-interface CardProps extends CharacterTypes {}
+export interface CardProps
+  extends Pick<CharacterTypes, 'image' | 'name' | 'status' | 'origin' | 'id'> {}
 
 export const Card: FC<CardProps> = ({
   image,
