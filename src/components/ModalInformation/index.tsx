@@ -1,5 +1,5 @@
 import * as S from './styles';
-import { Modal } from '../Modal';
+import { Modal } from '../../global/components/Modal';
 import { Carousel } from '../Carousel';
 import { NameBox } from '@/app/consult/styles';
 import { ReactNode } from 'react';
@@ -7,7 +7,6 @@ import { ReactNode } from 'react';
 interface ModalInformationProps {
   info: string;
   nameBox: string;
-
   children: ReactNode;
   isModalOpen: boolean;
   onCloseModal: () => void;
