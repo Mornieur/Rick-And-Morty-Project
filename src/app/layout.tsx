@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Rick and Morty',
-  description: 'Rick and morty api',
+  description: 'Rick and Morty api',
 };
 
 export default function RootLayout({
