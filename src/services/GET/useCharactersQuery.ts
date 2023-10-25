@@ -40,7 +40,7 @@ const useCharacterData = () => {
         CHARACTER_DATA_QUERY,
         { page: pageParam }
       );
-      console.log('pageParam', pageParam);
+
       const characterData = data as {
         characters: { results: CharacterTypes[] };
       };
