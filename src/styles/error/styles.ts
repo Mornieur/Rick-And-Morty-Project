@@ -10,6 +10,12 @@ export const Container = styled.div`
   flex-direction: column;
   gap: 2rem;
 
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
   p {
     color: #fff;
     font-size: 1rem;
