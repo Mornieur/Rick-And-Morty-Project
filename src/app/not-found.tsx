@@ -8,6 +8,7 @@ import { StarsShip } from '@/models/Starship';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Metadata } from 'next';
 import { RickModel } from '@/models/RickModel';
+import { SpaceShip } from '@/models/SpaceShip';
 
 export const metadata: Metadata = {
   title: 'Página 404',
@@ -27,14 +28,19 @@ export default function NotFound() {
     starshipModel.load();
 
     const rickModel = new RickModel(scene);
-
     rickModel.load(() => {
       rickModel.adjustPositionForResponsiveness();
       new OrbitControls(camera, renderer.domElement);
 
+      const spaceShip = new SpaceShip(scene);
+      spaceShip.load(() => {
+        spaceShip.adjustPositionForResponsiveness();
+      });
+
       const animate = () => {
         requestAnimationFrame(animate);
         rickModel.update();
+        spaceShip.update();
         renderer.render(scene, camera);
         starshipModel.starsMesh.rotation.x += 0.0005;
       };
