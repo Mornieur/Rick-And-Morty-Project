@@ -1,6 +1,5 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import * as S from '../styles/error/styles';
 import Error404 from '../../public/error404.png';
 import { useEffect, useState } from 'react';
