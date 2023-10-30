@@ -30,19 +30,28 @@ export default function NotFound() {
     const rickModel = new RickModel(scene);
 
     rickModel.load(() => {
+      rickModel.adjustPositionForResponsiveness();
       new OrbitControls(camera, renderer.domElement);
 
       const animate = () => {
         requestAnimationFrame(animate);
-
         rickModel.update();
-
         renderer.render(scene, camera);
         starshipModel.starsMesh.rotation.x += 0.0005;
       };
 
       animate();
     });
+
+    function handleResize() {
+      rickModel.adjustPositionForResponsiveness();
+    }
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   return (
