@@ -21,6 +21,9 @@
     📚 Detailed Cards: Unearth specifics about your favorite characters, recall epic episodes or wander through alien worlds.
     💼 Intuitive UI: Seamlessly navigate through the multiverse with a user-friendly interface.
     🌐 Responsive Design: Explore from any device, ensuring a consistent experience whether you're on desktop, tablet, or mobile.
+    🥚 Easter Egg Alert! For those who have an appetite for fun, a secret awaits. Embark on a quest to uncover a hidden gem embedded within our application. As a hint: if 
+        you stumble upon an error page, don’t rush away. There's more than meets the eye, and a delightful surprise for those who stay curious. Can you find it?
+
 
 ### 🛠 Technologies
 
