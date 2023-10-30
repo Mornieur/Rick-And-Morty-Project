@@ -103,12 +103,12 @@ export const Description = styled.p`
   color: #fff;
   font-weight: 600;
   font-size: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 2rem;
   width: 100%;
   background-color: #5d595e;
   border-radius: 0.5rem;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   align-items: center;
   position: relative;
