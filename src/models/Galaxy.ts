@@ -30,6 +30,8 @@ export class Galaxy {
     this.scene.add(this.light);
     this.scene.add(this.lightUp);
 
+    this.scene.background = new THREE.Color(0x000000);
+
     this.camera.position.z = 6;
     this.camera.rotation.x = 1.4;
 
