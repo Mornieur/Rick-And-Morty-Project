@@ -4,13 +4,24 @@ import { Modal } from '@/global/components/Modal';
 import * as S from './styles';
 import useProfileQuery from '@/services/GET/useProfileQuery';
 import { useSearchParams } from 'next/navigation';
-import { BiRightArrowAlt } from 'react-icons/bi';
+import { BiPlanet, BiRightArrowAlt } from 'react-icons/bi';
 import { useState } from 'react';
 import { ModalInformation } from '@/components/ModalInformation';
 import { Episode } from '@/services/GET/types';
 import { Loading } from '@/global/components/Loading';
 import { MdOutlineKeyboardBackspace } from 'react-icons/md';
+import { RiAliensFill } from 'react-icons/ri';
+import { PiGenderMaleBold, PiGenderFemaleBold } from 'react-icons/pi';
+import { FaMountainCity } from 'react-icons/fa6';
+import { BsQuestionLg } from 'react-icons/bs';
 import { Skeleton } from '@/global/components/Skeleton';
+
+type GenderIcons = {
+  [key: string]: React.ComponentType<any>;
+  Male: React.ComponentType<any>;
+  Female: React.ComponentType<any>;
+  Unknown: React.ComponentType<any>;
+};
 
 const Consult: React.FC = () => {
   const searchParams = useSearchParams();
@@ -29,6 +40,30 @@ const Consult: React.FC = () => {
 
   const handleOriginClick = (loc: string) => {
     setSelectedOriginData(loc);
+  };
+
+  const genders: GenderIcons = {
+    Male: PiGenderMaleBold,
+    Female: PiGenderFemaleBold,
+    Unknown: BsQuestionLg,
+  };
+
+  const handleGender = (gender: string) => {
+    let color;
+    switch (gender) {
+      case 'Male':
+        color = '#0075f9';
+        break;
+      case 'Female':
+        color = '#ff37cd';
+        break;
+      default:
+        color = '#ffffff';
+        break;
+    }
+
+    const GenderIcon = genders[gender] || BsQuestionLg;
+    return <GenderIcon size={20} color={color} />;
   };
 
   return (
@@ -101,10 +136,12 @@ const Consult: React.FC = () => {
               <S.Title>Type:</S.Title>
               <S.Description>
                 {character.type === '' ? <p>-</p> : character.type}
+                <RiAliensFill size={20} color="#00FF00" />
               </S.Description>
               <S.Title>Gender:</S.Title>
               <S.Description>
-                {character.gender === '' ? <p>-</p> : character.gender}
+                {character.gender === '' ? <p>-</p> : character.gender}{' '}
+                {handleGender(character.gender)}
               </S.Description>
               <S.Title>Origin:</S.Title>
               <S.Description
@@ -115,6 +152,7 @@ const Consult: React.FC = () => {
                 ) : (
                   character.origin.name
                 )}
+                <BiPlanet size={20} />
               </S.Description>
               <S.Title>Dimension:</S.Title>
               <S.Description>
@@ -123,6 +161,7 @@ const Consult: React.FC = () => {
                 ) : (
                   character.location.name
                 )}
+                <FaMountainCity size={20} color="#872302" />
               </S.Description>
             </S.Information>
           </Modal>
